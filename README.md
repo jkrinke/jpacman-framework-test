@@ -38,3 +38,4 @@ command line, run
 ```java -classpath target/jpacman-framework-<VERSION>.jar nl.tudelft.jpacman.Launcher```
 4. To run the test suite in maven: `mvn test`
 5. To run the test suite in Eclipse: right click -> run as -> JUnit Test.
+ 
