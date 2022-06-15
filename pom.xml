@@ -47,9 +47,8 @@
         <junit.version>4.12</junit.version>
         <junit.vintage.version>5.1.1</junit.vintage.version>
 
-	<sonar.projectKey>jkrinke_jpacman-framework</sonar.projectKey>
-	<sonar.organization>jkrinke</sonar.organization>
-	<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+	<sonar.organization>chaiyongrag</sonar.organization>
+  	<sonar.host.url>https://sonarcloud.io</sonar.host.url>
   
         <cucumber.version>1.2.5</cucumber.version>
         <assertj.version>3.9.1</assertj.version>
