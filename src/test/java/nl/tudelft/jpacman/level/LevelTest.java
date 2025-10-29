@@ -154,4 +154,45 @@ class LevelTest {
         level.registerPlayer(p3);
         verify(p3).occupy(square1);
     }
+
+    /**
+     * Verifies that getBoard returns the correct board.
+     */
+    @Test
+    void testGetBoard() {
+        assertThat(level.getBoard()).isEqualTo(board);
+    }
+
+    /**
+     * Verifies that isAnyPlayerAlive returns false when no players are registered.
+     */
+    @Test
+    void testNoPlayersAlive() {
+        assertThat(level.isAnyPlayerAlive()).isFalse();
+    }
+
+    /**
+     * Verifies that isAnyPlayerAlive returns true when at least one player is alive.
+     */
+    @Test
+    void testOnePlayerAlive() {
+        Player p = mock(Player.class);
+        when(p.isAlive()).thenReturn(true);
+        level.registerPlayer(p);
+        assertThat(level.isAnyPlayerAlive()).isTrue();
+    }
+
+    /**
+     * Verifies that isAnyPlayerAlive returns false when all players are dead.
+     */
+    @Test
+    void testAllPlayersDead() {
+        Player p1 = mock(Player.class);
+        Player p2 = mock(Player.class);
+        when(p1.isAlive()).thenReturn(false);
+        when(p2.isAlive()).thenReturn(false);
+        level.registerPlayer(p1);
+        level.registerPlayer(p2);
+        assertThat(level.isAnyPlayerAlive()).isFalse();
+    }
 }
