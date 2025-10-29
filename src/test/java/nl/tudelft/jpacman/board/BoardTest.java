@@ -53,4 +53,27 @@ class BoardTest {
     void testSquareAt(int x, int y) {
         assertThat(board.squareAt(x, y)).isEqualTo(grid[x][y]);
     }
+
+    /**
+     * Test that withinBorders returns true for valid positions.
+     */
+    @Test
+    void testWithinBordersValid() {
+        assertThat(board.withinBorders(0, 0)).isTrue();
+        assertThat(board.withinBorders(1, 2)).isTrue();
+        assertThat(board.withinBorders(0, 1)).isTrue();
+        assertThat(board.withinBorders(1, 1)).isTrue();
+    }
+
+    /**
+     * Test that withinBorders returns false for invalid positions.
+     */
+    @Test
+    void testWithinBordersInvalid() {
+        assertThat(board.withinBorders(-1, 0)).isFalse();
+        assertThat(board.withinBorders(0, -1)).isFalse();
+        assertThat(board.withinBorders(2, 0)).isFalse();
+        assertThat(board.withinBorders(0, 3)).isFalse();
+        assertThat(board.withinBorders(2, 3)).isFalse();
+    }
 }
