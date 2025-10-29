@@ -47,7 +47,7 @@
         <junit.version>4.12</junit.version>
         <junit.vintage.version>5.1.1</junit.vintage.version>
 
-	<sonar.projectKey>jkrinke_jpacman-framework</sonar.projectKey>
+	<sonar.projectKey>jkrinke_jpacman-framework-test</sonar.projectKey>
 	<sonar.organization>jkrinke</sonar.organization>
 	<sonar.host.url>https://sonarcloud.io</sonar.host.url>
   
