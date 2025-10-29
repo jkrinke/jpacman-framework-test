@@ -71,8 +71,8 @@ class GhostCollisionTest {
 
     /**
      * Test that verifies two ghosts can move to the same square.
-     * This demonstrates the gameplay flaw where Ghost-Ghost collisions
-     * are not explicitly handled.
+     * This test verifies the Ghost-Ghost collision handler allows
+     * ghosts to pass through each other without any interaction.
      */
     @Test
     void testGhostsCanShareSquare() {
@@ -82,10 +82,11 @@ class GhostCollisionTest {
         // Move ghost1 east to square2 where ghost2 already is
         level.move(ghost1, Direction.EAST);
         
+        // Stop the level immediately to prevent NPCs from moving
+        level.stop();
+        
         // Both ghosts should now be on square2
-        // This test passes, showing that ghosts can occupy the same square
-        // The collision handler is called but does nothing since no 
-        // Ghost-Ghost handler is defined
+        // The Ghost-Ghost collision handler allows them to pass through each other
         assertThat(ghost1.getSquare()).isEqualTo(square2);
         assertThat(ghost2.getSquare()).isEqualTo(square2);
         
