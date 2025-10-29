@@ -29,7 +29,6 @@ class GhostCollisionTest {
     private Level level;
     private Ghost ghost1;
     private Ghost ghost2;
-    private Square square1;
     private Square square2;
 
     /**
@@ -49,7 +48,7 @@ class GhostCollisionTest {
         grid[1][0] = boardFactory.createGround();
         
         Board board = boardFactory.createBoard(grid);
-        square1 = board.squareAt(0, 0);
+        Square square1 = board.squareAt(0, 0);
         square2 = board.squareAt(1, 0);
         
         ghost1 = new TestGhost();
