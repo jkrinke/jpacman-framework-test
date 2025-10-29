@@ -24,10 +24,10 @@ public class DefaultPlayerInteractionMap implements CollisionMap {
     }
 
     /**
-     * Creates the default collisions Player-Ghost and Player-Pellet.
+     * Creates the default collisions Player-Ghost, Player-Pellet, and Ghost-Ghost.
      *
-     * @return The collision map containing collisions for Player-Ghost and
-     *         Player-Pellet.
+     * @return The collision map containing collisions for Player-Ghost,
+     *         Player-Pellet, and Ghost-Ghost.
      */
     private static CollisionInteractionMap defaultCollisions() {
         CollisionInteractionMap collisionMap = new CollisionInteractionMap();
@@ -40,6 +40,13 @@ public class DefaultPlayerInteractionMap implements CollisionMap {
                 pellet.leaveSquare();
                 player.addPoints(pellet.getValue());
             });
+
+        // Ghosts can move through each other without interaction
+        collisionMap.onCollision(Ghost.class, Ghost.class,
+            (ghost1, ghost2) -> {
+                // No action needed - ghosts pass through each other
+            });
+
         return collisionMap;
     }
 }
