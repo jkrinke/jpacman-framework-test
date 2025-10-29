@@ -10,6 +10,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 class DirectionTest {
 
     /**
+     * Expected number of directions in the Direction enum.
+     */
+    private static final int EXPECTED_DIRECTION_COUNT = 4;
+
+    /**
      * Test that NORTH has correct delta values.
      */
     @Test
@@ -51,7 +56,7 @@ class DirectionTest {
     @Test
     void testAllDirections() {
         Direction[] directions = Direction.values();
-        assertThat(directions).hasSize(4);
+        assertThat(directions).hasSize(EXPECTED_DIRECTION_COUNT);
         assertThat(directions).contains(
             Direction.NORTH,
             Direction.SOUTH,

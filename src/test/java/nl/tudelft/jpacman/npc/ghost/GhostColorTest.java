@@ -10,12 +10,17 @@ import static org.assertj.core.api.Assertions.assertThat;
 class GhostColorTest {
 
     /**
+     * Expected number of ghost colors.
+     */
+    private static final int EXPECTED_COLOR_COUNT = 4;
+
+    /**
      * Test that all expected ghost colors exist.
      */
     @Test
     void testGhostColors() {
         GhostColor[] colors = GhostColor.values();
-        assertThat(colors).hasSize(4);
+        assertThat(colors).hasSize(EXPECTED_COLOR_COUNT);
         assertThat(colors).contains(
             GhostColor.RED,
             GhostColor.CYAN,

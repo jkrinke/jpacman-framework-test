@@ -36,12 +36,6 @@ public class Inky extends Ghost {
     private static final int SQUARES_AHEAD = 2;
 
     /**
-     * The variation in intervals, this makes the ghosts look more dynamic and
-     * less predictable.
-     */
-    private static final int INTERVAL_VARIATION = 50;
-
-    /**
      * The base movement interval.
      */
     private static final int MOVE_INTERVAL = 250;
@@ -52,7 +46,7 @@ public class Inky extends Ghost {
      * @param spriteMap The sprites for this ghost.
      */
     public Inky(Map<Direction, Sprite> spriteMap) {
-        super(spriteMap, MOVE_INTERVAL, INTERVAL_VARIATION);
+        super(spriteMap, MOVE_INTERVAL, DEFAULT_INTERVAL_VARIATION);
     }
 
     /**

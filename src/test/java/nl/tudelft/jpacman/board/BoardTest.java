@@ -72,8 +72,8 @@ class BoardTest {
     void testWithinBordersInvalid() {
         assertThat(board.withinBorders(-1, 0)).isFalse();
         assertThat(board.withinBorders(0, -1)).isFalse();
-        assertThat(board.withinBorders(2, 0)).isFalse();
-        assertThat(board.withinBorders(0, 3)).isFalse();
-        assertThat(board.withinBorders(2, 3)).isFalse();
+        assertThat(board.withinBorders(MAX_WIDTH, 0)).isFalse();
+        assertThat(board.withinBorders(0, MAX_HEIGHT)).isFalse();
+        assertThat(board.withinBorders(MAX_WIDTH, MAX_HEIGHT)).isFalse();
     }
 }
