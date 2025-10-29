@@ -17,13 +17,13 @@ import java.util.Random;
  * @author Jeroen Roosen
  */
 public abstract class Ghost extends Unit {
-    
+
     /**
-     * The default variation in intervals, this makes the ghosts look more 
+     * The default variation in intervals, this makes the ghosts look more
      * dynamic and less predictable.
      */
     protected static final int DEFAULT_INTERVAL_VARIATION = 50;
-    
+
     /**
      * The sprite map, one sprite for each direction.
      */
