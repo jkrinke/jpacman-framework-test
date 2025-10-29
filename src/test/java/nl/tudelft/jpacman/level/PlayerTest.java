@@ -18,6 +18,21 @@ import static org.mockito.Mockito.verify;
  */
 class PlayerTest {
 
+    /**
+     * Test point value for adding to player score.
+     */
+    private static final int TEST_POINTS_FIRST = 10;
+    
+    /**
+     * Test point value for second addition to player score.
+     */
+    private static final int TEST_POINTS_SECOND = 20;
+    
+    /**
+     * Expected total score after both point additions.
+     */
+    private static final int EXPECTED_TOTAL_SCORE = 30;
+
     private Player player;
     private Map<Direction, Sprite> sprites;
     private AnimatedSprite deathSprite;
@@ -57,10 +72,10 @@ class PlayerTest {
      */
     @Test
     void testAddPoints() {
-        player.addPoints(10);
-        assertThat(player.getScore()).isEqualTo(10);
-        player.addPoints(20);
-        assertThat(player.getScore()).isEqualTo(30);
+        player.addPoints(TEST_POINTS_FIRST);
+        assertThat(player.getScore()).isEqualTo(TEST_POINTS_FIRST);
+        player.addPoints(TEST_POINTS_SECOND);
+        assertThat(player.getScore()).isEqualTo(EXPECTED_TOTAL_SCORE);
     }
 
     /**

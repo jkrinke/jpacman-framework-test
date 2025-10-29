@@ -12,6 +12,11 @@ import static org.mockito.Mockito.mock;
  */
 class PelletTest {
 
+    /**
+     * Test point value for the pellet.
+     */
+    private static final int TEST_PELLET_VALUE = 10;
+
     private Pellet pellet;
     private Sprite sprite;
 
@@ -21,8 +26,7 @@ class PelletTest {
     @BeforeEach
     void setUp() {
         sprite = mock(Sprite.class);
-        final int points = 10;
-        pellet = new Pellet(points, sprite);
+        pellet = new Pellet(TEST_PELLET_VALUE, sprite);
     }
 
     /**
@@ -30,7 +34,7 @@ class PelletTest {
      */
     @Test
     void testGetValue() {
-        assertThat(pellet.getValue()).isEqualTo(10);
+        assertThat(pellet.getValue()).isEqualTo(TEST_PELLET_VALUE);
     }
 
     /**

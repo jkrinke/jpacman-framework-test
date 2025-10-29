@@ -43,7 +43,7 @@ class PacmanConfigurationExceptionTest {
         assertThatThrownBy(() -> {
             throw new PacmanConfigurationException("Test error");
         })
-        .isInstanceOf(PacmanConfigurationException.class)
-        .hasMessage("Test error");
+            .isInstanceOf(PacmanConfigurationException.class)
+            .hasMessage("Test error");
     }
 }
