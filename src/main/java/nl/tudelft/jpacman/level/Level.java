@@ -297,7 +297,6 @@ public class Level {
      * @return The amount of pellets remaining on the board.
      */
     public int remainingPellets() {
-        // not needed: Board board = getBoard();
         int pellets = 0;
         for (int x = 0; x < board.getWidth(); x++) {
             for (int y = 0; y < board.getHeight(); y++) {

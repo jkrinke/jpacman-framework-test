@@ -43,12 +43,6 @@ import nl.tudelft.jpacman.sprite.Sprite;
 public class Blinky extends Ghost {
 
     /**
-     * The variation in intervals, this makes the ghosts look more dynamic and
-     * less predictable.
-     */
-    private static final int INTERVAL_VARIATION = 50;
-
-    /**
      * The base movement interval.
      */
     private static final int MOVE_INTERVAL = 250;
@@ -62,7 +56,7 @@ public class Blinky extends Ghost {
     // TODO Blinky should speed up when there are a few pellets left, but he
     // has no way to find out how many there are.
     public Blinky(Map<Direction, Sprite> spriteMap) {
-        super(spriteMap, MOVE_INTERVAL, INTERVAL_VARIATION);
+        super(spriteMap, MOVE_INTERVAL, DEFAULT_INTERVAL_VARIATION);
     }
 
     /**
