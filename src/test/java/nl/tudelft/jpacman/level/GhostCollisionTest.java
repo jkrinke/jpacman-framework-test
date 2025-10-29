@@ -11,7 +11,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.EnumMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -108,7 +108,7 @@ class GhostCollisionTest {
         }
         
         private static Map<Direction, Sprite> createSpriteMap() {
-            Map<Direction, Sprite> spriteMap = new HashMap<>();
+            Map<Direction, Sprite> spriteMap = new EnumMap<>(Direction.class);
             Sprite mockSprite = mock(Sprite.class);
             for (Direction dir : Direction.values()) {
                 spriteMap.put(dir, mockSprite);
